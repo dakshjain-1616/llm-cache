@@ -1,0 +1,86 @@
+<svg width="860" height="280" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 280">
+  <defs>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f97316"/>
+    </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#0001" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="280" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <rect width="860" height="52" rx="16" fill="#f8fafc"/>
+  <rect x="0" y="36" width="860" height="16" fill="#f8fafc"/>
+  <rect x="0" y="248" width="860" height="32" rx="0" fill="#f8fafc"/>
+  <rect x="0" y="248" width="860" height="16" fill="#f8fafc"/>
+  <rect x="0" y="252" width="860" height="28" rx="0" fill="#f8fafc"/>
+  <rect x="0" y="256" width="860" height="24" rx="16" fill="#f8fafc"/>
+
+  <!-- Section label background -->
+  <rect width="860" height="52" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0"/>
+
+  <!-- Title -->
+  <text x="430" y="30" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="15" font-weight="700" fill="#0f172a" letter-spacing="-0.2">How llm-cache Works</text>
+
+  <!-- ── STEP 1: Your Prompt ── -->
+  <rect x="22" y="72" width="120" height="56" rx="10" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="82" y="93" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" font-weight="700" fill="#4c1d95">Your Prompt</text>
+  <text x="82" y="111" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#7c3aed">"any wording"</text>
+  <text x="82" y="125" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" fill="#a78bfa">string or messages</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="143" y1="100" x2="173" y2="100" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#arrowGray)"/>
+
+  <!-- ── STEP 2: Embedder ── -->
+  <rect x="175" y="72" width="120" height="56" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="235" y="93" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" font-weight="700" fill="#1e3a8a">Embedder</text>
+  <text x="235" y="111" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#1d4ed8">MiniLM-L6-v2</text>
+  <text x="235" y="125" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" fill="#60a5fa">384-dim vector</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="296" y1="100" x2="326" y2="100" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#arrowGray)"/>
+
+  <!-- ── STEP 3: FAISS Search ── -->
+  <rect x="328" y="72" width="120" height="56" rx="10" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="388" y="93" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" font-weight="700" fill="#14532d">FAISS Index</text>
+  <text x="388" y="111" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#16a34a">cosine search</text>
+  <text x="388" y="125" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" fill="#4ade80">nearest neighbour</text>
+
+  <!-- Arrow 3→diamond -->
+  <line x1="449" y1="100" x2="479" y2="100" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#arrowGray)"/>
+
+  <!-- ── DECISION DIAMOND: sim ≥ threshold? ── -->
+  <!-- Center: (560, 100). Half-width=80, half-height=58 -->
+  <polygon points="560,48 640,100 560,152 480,100" fill="#fefce8" stroke="#eab308" stroke-width="1.8" filter="url(#shadow)"/>
+  <text x="560" y="93" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" font-weight="700" fill="#713f12">similarity</text>
+  <text x="560" y="108" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" font-weight="700" fill="#713f12">≥ threshold?</text>
+
+  <!-- ── YES path: right → Cache Hit ── -->
+  <line x1="641" y1="100" x2="680" y2="100" stroke="#16a34a" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="660" y="92" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" font-weight="700" fill="#16a34a">YES</text>
+
+  <!-- Cache Hit box -->
+  <rect x="682" y="72" width="150" height="56" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2" filter="url(#shadow)"/>
+  <text x="757" y="93" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" font-weight="700" fill="#14532d">✓  Cache Hit</text>
+  <text x="757" y="111" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#15803d">zero API cost</text>
+  <text x="757" y="125" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" fill="#4ade80">instant response</text>
+
+  <!-- ── NO path: down → Call Real API ── -->
+  <line x1="560" y1="153" x2="560" y2="183" stroke="#f97316" stroke-width="2" marker-end="url(#arrowOrange)"/>
+  <text x="571" y="173" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" font-weight="700" fill="#f97316">NO</text>
+
+  <!-- Call API box -->
+  <rect x="470" y="185" width="180" height="52" rx="10" fill="#fff7ed" stroke="#f97316" stroke-width="2" filter="url(#shadow)"/>
+  <text x="560" y="206" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" font-weight="700" fill="#7c2d12">Call Real API</text>
+  <text x="560" y="224" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" fill="#c2410c">cache result · return response</text>
+
+  <!-- Footer note -->
+  <text x="430" y="266" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="9.5" fill="#94a3b8">Embeddings run 100% locally · No data sent externally · Thread-safe · Persistent FAISS index</text>
+</svg>

@@ -1,0 +1,116 @@
+<svg width="700" height="320" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320">
+  <defs>
+    <linearGradient id="gradOrange" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+    <linearGradient id="gradGreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <linearGradient id="gradBlue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <filter id="sh" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0001" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="320" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <rect width="700" height="48" rx="16" fill="#f8fafc"/>
+  <rect y="32" width="700" height="16" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="350" y="30" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="15" font-weight="700" fill="#0f172a">API Cost Savings with Semantic Caching</text>
+
+  <!-- ── LEFT PANEL: Without Cache ── -->
+  <text x="175" y="64" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" font-weight="700" fill="#7c2d12">Without Cache</text>
+
+  <!-- 10 API call dots, all orange — 2 rows of 5 -->
+  <!-- Row 1: y=90, x from 90 to 250 -->
+  <circle cx="95"  cy="92" r="18" fill="url(#gradOrange)" filter="url(#sh)"/>
+  <circle cx="135" cy="92" r="18" fill="url(#gradOrange)" filter="url(#sh)"/>
+  <circle cx="175" cy="92" r="18" fill="url(#gradOrange)" filter="url(#sh)"/>
+  <circle cx="215" cy="92" r="18" fill="url(#gradOrange)" filter="url(#sh)"/>
+  <circle cx="255" cy="92" r="18" fill="url(#gradOrange)" filter="url(#sh)"/>
+  <!-- Row 2: y=130 -->
+  <circle cx="95"  cy="132" r="18" fill="url(#gradOrange)" filter="url(#sh)"/>
+  <circle cx="135" cy="132" r="18" fill="url(#gradOrange)" filter="url(#sh)"/>
+  <circle cx="175" cy="132" r="18" fill="url(#gradOrange)" filter="url(#sh)"/>
+  <circle cx="215" cy="132" r="18" fill="url(#gradOrange)" filter="url(#sh)"/>
+  <circle cx="255" cy="132" r="18" fill="url(#gradOrange)" filter="url(#sh)"/>
+
+  <!-- Labels on each dot -->
+  <text x="95"  y="96" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="system-ui,sans-serif">$</text>
+  <text x="135" y="96" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="system-ui,sans-serif">$</text>
+  <text x="175" y="96" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="system-ui,sans-serif">$</text>
+  <text x="215" y="96" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="system-ui,sans-serif">$</text>
+  <text x="255" y="96" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="system-ui,sans-serif">$</text>
+  <text x="95"  y="136" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="system-ui,sans-serif">$</text>
+  <text x="135" y="136" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="system-ui,sans-serif">$</text>
+  <text x="175" y="136" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="system-ui,sans-serif">$</text>
+  <text x="215" y="136" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="system-ui,sans-serif">$</text>
+  <text x="255" y="136" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="system-ui,sans-serif">$</text>
+
+  <!-- Cost bar -->
+  <rect x="60" y="172" width="230" height="28" rx="6" fill="#fee2e2" stroke="#fca5a5" stroke-width="1"/>
+  <rect x="60" y="172" width="230" height="28" rx="6" fill="url(#gradOrange)" opacity="0.85"/>
+  <text x="175" y="191" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="white">10 API calls · full cost</text>
+
+  <!-- Cost label -->
+  <text x="175" y="224" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="28" font-weight="800" fill="#ef4444">$$$$</text>
+  <text x="175" y="248" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" fill="#6b7280">100% of API budget spent</text>
+
+  <!-- Divider -->
+  <line x1="350" y1="55" x2="350" y2="285" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="350" y="295" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#94a3b8">vs</text>
+
+  <!-- ── RIGHT PANEL: With llm-cache ── -->
+  <text x="525" y="64" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" font-weight="700" fill="#14532d">With llm-cache</text>
+
+  <!-- 6 green (cached) + 4 orange (API calls) -->
+  <!-- Row 1: 5 dots at y=92 -->
+  <circle cx="395" cy="92" r="18" fill="url(#gradGreen)" filter="url(#sh)"/>
+  <circle cx="435" cy="92" r="18" fill="url(#gradGreen)" filter="url(#sh)"/>
+  <circle cx="475" cy="92" r="18" fill="url(#gradGreen)" filter="url(#sh)"/>
+  <circle cx="515" cy="92" r="18" fill="url(#gradGreen)" filter="url(#sh)"/>
+  <circle cx="555" cy="92" r="18" fill="url(#gradGreen)" filter="url(#sh)"/>
+  <!-- Row 2: 1 green + 4 orange at y=132 -->
+  <circle cx="395" cy="132" r="18" fill="url(#gradGreen)" filter="url(#sh)"/>
+  <circle cx="435" cy="132" r="18" fill="url(#gradOrange)" filter="url(#sh)"/>
+  <circle cx="475" cy="132" r="18" fill="url(#gradOrange)" filter="url(#sh)"/>
+  <circle cx="515" cy="132" r="18" fill="url(#gradOrange)" filter="url(#sh)"/>
+  <circle cx="555" cy="132" r="18" fill="url(#gradOrange)" filter="url(#sh)"/>
+
+  <!-- Labels: ✓ for cached, $ for API calls -->
+  <text x="395" y="97" text-anchor="middle" font-size="13" font-weight="700" fill="white" font-family="system-ui,sans-serif">✓</text>
+  <text x="435" y="97" text-anchor="middle" font-size="13" font-weight="700" fill="white" font-family="system-ui,sans-serif">✓</text>
+  <text x="475" y="97" text-anchor="middle" font-size="13" font-weight="700" fill="white" font-family="system-ui,sans-serif">✓</text>
+  <text x="515" y="97" text-anchor="middle" font-size="13" font-weight="700" fill="white" font-family="system-ui,sans-serif">✓</text>
+  <text x="555" y="97" text-anchor="middle" font-size="13" font-weight="700" fill="white" font-family="system-ui,sans-serif">✓</text>
+  <text x="395" y="137" text-anchor="middle" font-size="13" font-weight="700" fill="white" font-family="system-ui,sans-serif">✓</text>
+  <text x="435" y="136" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="system-ui,sans-serif">$</text>
+  <text x="475" y="136" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="system-ui,sans-serif">$</text>
+  <text x="515" y="136" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="system-ui,sans-serif">$</text>
+  <text x="555" y="136" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="system-ui,sans-serif">$</text>
+
+  <!-- Stacked bar: green portion (60%) + orange (40%) -->
+  <rect x="360" y="172" width="230" height="28" rx="6" fill="#dcfce7"/>
+  <rect x="360" y="172" width="138" height="28" rx="6" fill="url(#gradGreen)" opacity="0.9"/>
+  <rect x="498" y="172" width="92" height="28" rx="6" fill="url(#gradOrange)" opacity="0.85"/>
+  <text x="429" y="191" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="white">6 cached</text>
+  <text x="544" y="191" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="white">4 API</text>
+
+  <!-- Savings label -->
+  <text x="475" y="224" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="28" font-weight="800" fill="#16a34a">~60%</text>
+  <text x="475" y="242" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" font-weight="700" fill="#15803d">cost reduction</text>
+  <text x="475" y="260" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" fill="#6b7280">on repetitive workloads</text>
+
+  <!-- Legend -->
+  <circle cx="82" cy="292" r="6" fill="url(#gradOrange)"/>
+  <text x="93" y="296" font-family="system-ui,sans-serif" font-size="10" fill="#6b7280">API call (costs tokens)</text>
+  <circle cx="240" cy="292" r="6" fill="url(#gradGreen)"/>
+  <text x="251" y="296" font-family="system-ui,sans-serif" font-size="10" fill="#6b7280">Cache hit (free)</text>
+</svg>
